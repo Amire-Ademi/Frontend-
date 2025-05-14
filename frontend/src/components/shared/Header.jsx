@@ -28,7 +28,7 @@ const Header = () => {
           <FaUserCircle className='text-[#333]' size={40} />
           <div className='flex flex-col items-start'>
             <h1 className='text-md text-[#333] font-semibold'>Filan Fisteku</h1>
-            <p className='text-xs text-[#777] font-medium'>A</p>
+            <p className='text-xs text-[#777] font-medium'>Admin</p>
           </div>
         </div>
       </div>

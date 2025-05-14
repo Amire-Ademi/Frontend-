@@ -36,7 +36,7 @@ const BootomNav = () => {
 
 
       <Button
-       onClick={() => navigate("/tables")}
+       onClick={() => navigate("/TablesList")}
         variant="outline"
         className="flex items-center justify-center text-[#333] bg-[#e0e0e0] w-[20%]"
       >

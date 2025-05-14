@@ -117,6 +117,7 @@ const Register = () => {
              
               <option value="waiter">Waiter</option>
               <option value="chef">Chef</option>
+              <option value="admin">Admin</option>
             </select>
 
             <button
