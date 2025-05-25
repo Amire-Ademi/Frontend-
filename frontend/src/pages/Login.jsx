@@ -1,14 +1,13 @@
 import { useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { AuthContext } from "../context/AuthContext";
 import bgRestaurant from "../assets/bg-restaurant.jpg"; 
 import restaurantImage from "../assets/restaurant.jpg";
-import { AuthContext } from "@/context/AuthContext";
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
-  const { login } = useContext (AuthContext);
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleChange = (e) =>
@@ -22,13 +21,13 @@ const Login = () => {
         form
       );
       login(res.data.user); 
-      
       navigate(`/${res.data.user.role}/dashboard`);
 
     } catch (err) {
       alert("Login failed");
     }
   };
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${bgRestaurant})` }}>
