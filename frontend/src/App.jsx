@@ -3,7 +3,7 @@ import { Home, Auth, Orders } from "./pages";
 import Header from "./components/shared/Header";
 import CreateOrder from "./pages/CreateOrder";
 import TablesList from "./pages/admin/TablesList";
-import AdminFoods from "./pages/admin/AdminFoods";
+import AdminProducts from "./pages/admin/AdminProducts";
 import Login from "./pages/Login";
 import AuthProvider from "./context/AuthContext";
 import Register from "./pages/Register";
@@ -20,7 +20,7 @@ function App() {
           <Route path="/orders" element={<Orders />}></Route>
           <Route path="/CreateOrder" element={<CreateOrder />}></Route>
           <Route path="/TablesList" element={<TablesList />}></Route>
-          <Route path="/AdminFoods" element={<AdminFoods />}></Route>
+          <Route path="/AdminProducts" element={<AdminProducts />}></Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/waiter/Dashboard" element={<WaiterDashboard />} />

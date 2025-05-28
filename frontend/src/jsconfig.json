@@ -5,7 +5,7 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "jsconfig.json"]
+  "include": ["src", "jsconfig.json", "components/ui/alert-dialog.jsx", "components/ui/table.jsx"]
 }
 
 
