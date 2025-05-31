@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Auth, Orders } from "./pages";
+import { Home, Auth } from "./pages";
+import WaiterMenagament from "./pages/admin/WaiterMenagament";
 import Header from "./components/shared/Header";
 import CreateOrder from "./pages/CreateOrder";
 import TablesList from "./pages/admin/TablesList";
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/auth" element={<Auth />}></Route>
-          <Route path="/orders" element={<Orders />}></Route>
+          <Route path="/WaiterMenagament" element={<WaiterMenagament />}></Route>
           <Route path="/CreateOrder" element={<CreateOrder />}></Route>
           <Route path="/TablesList" element={<TablesList />}></Route>
           <Route path="/AdminProducts" element={<AdminProducts />}></Route>

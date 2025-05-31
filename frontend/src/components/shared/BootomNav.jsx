@@ -21,12 +21,12 @@ const BootomNav = () => {
       </Button>
 
       <Button
-        onClick={() => navigate("/orders")}
+        onClick={() => navigate("/WaiterMenagament")}
         variant="outline"
         className="flex items-center justify-center text-[#333] bg-[#e0e0e0] w-[20%]"
       >
         <MdOutlineReorder className="inline mr-2" size={20} />
-        <p>Orders</p>
+        <p>Waiters</p>
       </Button>
 
    
