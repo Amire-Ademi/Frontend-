@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Auth, Orders } from "../pages/";
+import {  Auth, Orders } from "../pages/";
+import AdminDashboard from "./admin/Dashboard";
 import Header from "../components/shared/Header";
 import CreateOrder from "../pages/CreateOrder";
 import SelectTable from "../pages/waiter/SelectTable";
@@ -20,7 +21,7 @@ function App() {
         <Header />
         <Routes>
           {/* Routes për aplikimin tuaj */}
-          <Route path="/" element={<Home />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/CreateOrder" element={<CreateOrder />} />
@@ -30,7 +31,7 @@ function App() {
            <Route path="/select-table" element={<SelectTable />} />
           {/* Routes për menaxherët dhe role të tjera */}
           <Route
-            path="./home"
+            path="./admin/dashboard"
             element={
               <ProtectedRoute allowedRoles={["admin"]}>
                 <ManagerDashboard />

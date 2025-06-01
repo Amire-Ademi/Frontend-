@@ -21,8 +21,9 @@ const Login = () => {
         form
       );
       login(res.data.user); 
+    
       navigate(`/${res.data.user.role}/dashboard`);
-
+      
     } catch (err) {
       alert("Login failed");
     }

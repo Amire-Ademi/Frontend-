@@ -36,13 +36,14 @@ const TablesList = () => {
   // inputet e krijim
   const [number, setNumber] = useState('');
   const [status, setStatus] = useState('available');
-  const [roomId, setRoomId] = useState('');
+  const [room, setRoom] = useState('family');
 
   //per edit
   const [editOpen, setEditOpen] = useState(false);
   const [editTableId, setEditTableId] = useState(null);
   const [editNumber, setEditNumber] = useState('');
   const [editStatus, setEditStatus] = useState('available');
+  const [editRoom, setEditRoom] = useState('family');
 
   const fetchTables = async () => {
     try {
@@ -86,7 +87,7 @@ const TablesList = () => {
         body: JSON.stringify({
           number,
           status,
-          room_id: roomId || null,
+          room: room || null,
         }),
       });
 
@@ -98,7 +99,7 @@ const TablesList = () => {
 
       setNumber('');
       setStatus('available');
-      setRoomId('');
+      setRoom('family');
       setError(null);
       fetchTables(); // rifresko listën
     } catch (error) {
@@ -111,6 +112,7 @@ const TablesList = () => {
     setEditTableId(table.id);
     setEditNumber(table.number);
     setEditStatus(table.status);
+    setEditRoom(table.room);
   };
   //me bo update tani qat tavoline
   const updateTable = async (e) => {
@@ -123,7 +125,8 @@ const TablesList = () => {
      },
      body: JSON.stringify({
       number: editNumber,
-      status: editStatus
+      status: editStatus,
+      room: editRoom,
      }),
     });
     if(!res.ok){
@@ -175,6 +178,21 @@ const TablesList = () => {
                  </SelectContent>
               </Select>
             </div>
+
+            <div className="flex flex-col space-y-1.5 ">
+              <Label htmlFor="framework">Rooms:</Label>
+              <Select value={room} onValueChange={setRoom}>
+
+                <SelectTrigger id="room">
+                  <SelectValue placeholder="Select" />
+                </SelectTrigger>
+                <SelectContent position="popper">
+                  <SelectItem value="family">Family Room</SelectItem>
+                  <SelectItem value="vip">VIP Lounge</SelectItem>
+                  <SelectItem value="normal">Garden Room</SelectItem>
+                 </SelectContent>
+              </Select>
+            </div>
             <CardFooter className="flex justify-between">
         <Button>Create</Button>
       </CardFooter>
@@ -183,7 +201,7 @@ const TablesList = () => {
       </CardContent>
     </Card>
 
-    <h2 className='text-xl mt-8 mb-4 ml-8'>Lista e tabelave</h2>
+    <h2 className='text-xl mt-8 mb-4 ml-8'>Lista e tavolinave</h2>
     <div className='flex flex-wrap gap-6 ml-8 '>
       {tables.map((table) => (
         <div
@@ -197,6 +215,7 @@ const TablesList = () => {
 
           <p>Tavolina {table.number}</p>
           <p>Statusi {table.status}</p>
+          <p>Rooms {table.room}</p>
            <div className="mt-2 flex gap-5">
           <Button onClick={() => deleteTable(table.id)}>Delete</Button>
          
@@ -234,6 +253,22 @@ const TablesList = () => {
                   <SelectItem value="available">E lire</SelectItem>
                   <SelectItem value="reserved">E rezervuar</SelectItem>
                   <SelectItem value="occupied">E zene</SelectItem>
+                 </SelectContent>
+              </Select>
+              </div>
+
+               <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="editStatus" className="text-right">
+              Rooms
+            </Label>
+            <Select value={editRoom} onValueChange={setEditRoom}>
+                <SelectTrigger id="editRoom">
+                  <SelectValue placeholder="Select" />
+                </SelectTrigger>
+                <SelectContent position="popper">
+                  <SelectItem value="family">Family Room</SelectItem>
+                  <SelectItem value="vip">VIP Lounge</SelectItem>
+                  <SelectItem value="normal">Garden Room</SelectItem>
                  </SelectContent>
               </Select>
               </div>

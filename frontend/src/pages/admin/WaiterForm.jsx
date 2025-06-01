@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -40,6 +39,7 @@ export default  function WaiterForm() {
           method: "POST",
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify(values),
+          
         });
 
         if(!res.ok){
@@ -103,7 +103,7 @@ export default  function WaiterForm() {
   )}
 />
 
-<Button className="m-5" type="submit">Shto Kamrierin</Button>
+<Button className="m-5" type="submit">Shto Kamarierin</Button>
 </form>
 </Form>
 )

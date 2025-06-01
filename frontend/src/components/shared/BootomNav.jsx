@@ -12,7 +12,7 @@ const BootomNav = () => {
   const navigate = useNavigate();
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-[#fde4e4] p-3 h-16 flex justify-around shadow-md">
-      <Button  onClick={() => navigate("/")}
+      <Button  onClick={() => navigate("/admin/Dashboard")}
         variant="outline"
         className="flex items-center justify-center text-[#333] bg-[#e0e0e0] w-[20%] rounded-lg"
       >

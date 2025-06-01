@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Auth } from "./pages";
+import {  Auth } from "./pages";
+import AdminDashboard from "./pages/admin/Dashboard"
 import WaiterMenagament from "./pages/admin/WaiterMenagament";
 import Header from "./components/shared/Header";
 import CreateOrder from "./pages/CreateOrder";
@@ -16,7 +17,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/admin/Dashboard" element={<AdminDashboard/>}></Route>
           <Route path="/auth" element={<Auth />}></Route>
           <Route path="/WaiterMenagament" element={<WaiterMenagament />}></Route>
           <Route path="/CreateOrder" element={<CreateOrder />}></Route>
